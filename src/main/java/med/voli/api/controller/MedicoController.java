@@ -6,6 +6,8 @@ import med.voli.api.dto.DadosListagemMedicoDto;
 import med.voli.api.medico.Medico;
 import med.voli.api.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,7 @@ public class MedicoController {
     }
     
     @GetMapping
-    public List<DadosListagemMedicoDto> listar(){
-        return repository.findAll().stream().map(DadosListagemMedicoDto::new).toList();
+    public Page<DadosListagemMedicoDto> listar(Pageable pageable){
+        return repository.findAll(pageable).map(DadosListagemMedicoDto::new);
     }
 }
