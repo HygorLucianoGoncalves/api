@@ -2,10 +2,9 @@ package med.voli.api.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import med.voli.api.endecos.DadosEndereco;
 import med.voli.api.medico.Especialidade;
 
-public record DadosCadastroMedicoDto(
+public record DadosCadastroMedicoDTO(
         @NotBlank
         String nome,
         @NotBlank
@@ -20,5 +19,5 @@ public record DadosCadastroMedicoDto(
         Especialidade especialidade,
         @NotNull
         @Valid
-        DadosEndereco endereco
+        DadosEnderecoDTO endereco
 ) {}

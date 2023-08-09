@@ -2,7 +2,8 @@ package med.voli.api.medico;
 
 import jakarta.persistence.*;
 import lombok.*;
-import med.voli.api.dto.DadosCadastroMedicoDto;
+import med.voli.api.dto.DadosCadastroMedicoDTO;
+import med.voli.api.dto.DadosPutMedicosDTO;
 import med.voli.api.endecos.Endereco;
 
 @Table(name = "medicos")
@@ -27,12 +28,27 @@ public class Medico {
     @Embedded
     private Endereco endereco;
 
-    public Medico(DadosCadastroMedicoDto dados) {
+    public Medico(DadosCadastroMedicoDTO dados) {
         this.nome = dados.nome();;
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public void atualizarInformacoes(DadosPutMedicosDTO dados) {
+       if (dados.nome() != null){
+           this.nome = dados.nome();
+           
+       }
+        if (dados.telefone() != null){
+            this.nome = dados.telefone();
+
+        }
+        if (dados.endereco() != null){
+            this.endereco.atualizarInformacoes(dados.endereco());
+
+        }
     }
 }
