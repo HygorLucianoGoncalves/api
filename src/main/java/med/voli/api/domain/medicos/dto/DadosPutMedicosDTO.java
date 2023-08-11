@@ -1,4 +1,4 @@
-package med.voli.api.dto;
+package med.voli.api.domain.medicos.dto;
 
 import jakarta.validation.constraints.NotNull;
 

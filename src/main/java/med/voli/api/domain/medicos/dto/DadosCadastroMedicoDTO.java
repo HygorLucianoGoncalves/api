@@ -1,8 +1,8 @@
-package med.voli.api.dto;
+package med.voli.api.domain.medicos.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import med.voli.api.medico.Especialidade;
+import med.voli.api.domain.medicos.entities.Especialidade;
 
 public record DadosCadastroMedicoDTO(
         @NotBlank

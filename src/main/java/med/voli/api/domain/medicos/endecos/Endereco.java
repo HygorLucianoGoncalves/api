@@ -1,8 +1,8 @@
-package med.voli.api.endecos;
+package med.voli.api.domain.medicos.endecos;
 
 import jakarta.persistence.Embeddable;
 import lombok.*;
-import med.voli.api.dto.DadosEnderecoDTO;
+import med.voli.api.domain.medicos.dto.DadosEnderecoDTO;
 
 @Embeddable
 @Getter
