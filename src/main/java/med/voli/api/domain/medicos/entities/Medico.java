@@ -32,7 +32,7 @@ public class Medico {
 
     public Medico(DadosCadastroMedicoDTO dados) {
         this.ativo = true;
-        this.nome = dados.nome();;
+        this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
