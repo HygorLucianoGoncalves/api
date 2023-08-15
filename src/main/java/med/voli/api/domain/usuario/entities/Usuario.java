@@ -28,6 +28,11 @@ public class Usuario implements UserDetails {
         this.senha = dados.senha();
     }
 
+    public Usuario(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
