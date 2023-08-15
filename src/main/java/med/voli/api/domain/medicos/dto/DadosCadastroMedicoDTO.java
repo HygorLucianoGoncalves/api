@@ -2,7 +2,8 @@ package med.voli.api.domain.medicos.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import med.voli.api.domain.medicos.entities.Especialidade;
+import med.voli.api.domain.endecos.dto.DadosEnderecoDTO;
+import med.voli.api.domain.medicos.entity.Especialidade;
 
 public record DadosCadastroMedicoDTO(
         @NotBlank

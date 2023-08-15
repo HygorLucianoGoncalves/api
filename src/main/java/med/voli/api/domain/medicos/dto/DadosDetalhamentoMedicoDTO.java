@@ -1,8 +1,8 @@
 package med.voli.api.domain.medicos.dto;
 
-import med.voli.api.domain.medicos.entities.Especialidade;
-import med.voli.api.domain.medicos.endecos.Endereco;
-import med.voli.api.domain.medicos.entities.Medico;
+import med.voli.api.domain.medicos.entity.Especialidade;
+import med.voli.api.domain.endecos.entity.Endereco;
+import med.voli.api.domain.medicos.entity.Medico;
 
 public record DadosDetalhamentoMedicoDTO(
         Long id,

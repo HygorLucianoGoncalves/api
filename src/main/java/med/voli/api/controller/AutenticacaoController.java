@@ -2,16 +2,15 @@ package med.voli.api.controller;
 
 import jakarta.validation.Valid;
 import med.voli.api.domain.usuario.dto.DadosAutenticacaoDTO;
-import med.voli.api.domain.usuario.entities.Usuario;
+import med.voli.api.domain.usuario.entity.Usuario;
 import med.voli.api.domain.usuario.repository.UsuarioRepository;
-import med.voli.api.infra.security.DadosTokenJwt;
+import med.voli.api.infra.security.dto.DadosTokenJwtDTO;
 import med.voli.api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +36,7 @@ public class AutenticacaoController {
 
         var token = tokenService.gerarToken((Usuario) authentication.getPrincipal());
 
-        return ResponseEntity.ok(new DadosTokenJwt(token));
+        return ResponseEntity.ok(new DadosTokenJwtDTO(token));
     }
 
     @PostMapping("/cadastro")//CRIE ESSE METODO PQ ESTOU USANDO O H2 COMO BANCO DE DADO

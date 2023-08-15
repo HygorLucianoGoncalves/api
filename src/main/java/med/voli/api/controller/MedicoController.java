@@ -5,7 +5,7 @@ import med.voli.api.domain.medicos.dto.DadosCadastroMedicoDTO;
 import med.voli.api.domain.medicos.dto.DadosDetalhamentoMedicoDTO;
 import med.voli.api.domain.medicos.dto.DadosListagemMedicoDTO;
 import med.voli.api.domain.medicos.dto.DadosPutMedicosDTO;
-import med.voli.api.domain.medicos.entities.Medico;
+import med.voli.api.domain.medicos.entity.Medico;
 import med.voli.api.domain.medicos.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

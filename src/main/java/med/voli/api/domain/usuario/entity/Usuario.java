@@ -1,4 +1,4 @@
-package med.voli.api.domain.usuario.entities;
+package med.voli.api.domain.usuario.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
