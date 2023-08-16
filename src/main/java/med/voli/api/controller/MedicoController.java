@@ -39,7 +39,7 @@ public class MedicoController {
         return ResponseEntity.ok(page);
     }
 
-    @GetMapping("/{id}") 
+    @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable Long id) {
         var medico = repository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoMedicoDTO(medico));
@@ -62,6 +62,6 @@ public class MedicoController {
 
         return ResponseEntity.noContent().build();
     }
-    
+
 
 }

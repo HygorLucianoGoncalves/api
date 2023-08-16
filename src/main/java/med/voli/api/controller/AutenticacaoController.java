@@ -41,13 +41,14 @@ public class AutenticacaoController {
 
     @PostMapping("/cadastro")//CRIE ESSE METODO PQ ESTOU USANDO O H2 COMO BANCO DE DADO
     public ResponseEntity cadastrarLogin(@RequestBody @Valid DadosAutenticacaoDTO dados) {
-        if (this.repository.findByLogin(dados.login()) != null) return ResponseEntity.badRequest().build();
+        if (this.repository.findByLogin(dados.login()) != null) return ResponseEntity.ok().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(dados.senha());
         Usuario novoUsuario = new Usuario(dados.login(), encryptedPassword);
-        
+
         this.repository.save(novoUsuario);
-        
+
         return ResponseEntity.ok().build();
+        
     }
 }
