@@ -2,6 +2,7 @@ package med.voli.api.domain.consultas.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import med.voli.api.domain.consultas.enums.*;
 import med.voli.api.domain.medicos.entity.*;
 import med.voli.api.domain.paciente.entity.*;
 
@@ -24,5 +25,12 @@ public class Consulta {
     @JoinColumn(name = "paciente_id")
     private Paciente paiente;
     private LocalDateTime data;
+    @Column(name = "motivo_cancelamento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamento motivoCancelamento;
+
+    public void cancelar(MotivoCancelamento motivo) {
+        this.motivoCancelamento = motivo;
+    }
 
 }

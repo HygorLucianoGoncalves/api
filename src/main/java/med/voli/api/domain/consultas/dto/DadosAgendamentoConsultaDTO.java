@@ -1,6 +1,7 @@
 package med.voli.api.domain.consultas.dto;
 
 import jakarta.validation.constraints.*;
+import med.voli.api.domain.medicos.entity.*;
 
 import java.time.*;
 
@@ -10,6 +11,7 @@ public record DadosAgendamentoConsultaDTO(
         Long idPaciente,
         @NotNull
         @Future
-        LocalDateTime data
+        LocalDateTime data,
+        Especialidade especialidade
 ) {
 }
