@@ -1,4 +1,4 @@
-package med.voli.api.domain.consultas.dto;
+package med.voli.api.domain.consultas.dto.agendamento;
 
 import jakarta.validation.constraints.*;
 import med.voli.api.domain.medicos.entity.*;

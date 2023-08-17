@@ -25,7 +25,7 @@ public class Paciente {
     @Embedded
     private Endereco endereco;
     private String telefone;
-    private Boolean ativo;
+    private Boolean ativo = true;
 
 
     public Paciente(DadosCadastroPacienteDTO dados) {

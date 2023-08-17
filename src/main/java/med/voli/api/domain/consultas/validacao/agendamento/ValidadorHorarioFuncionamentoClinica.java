@@ -1,11 +1,12 @@
-package med.voli.api.domain.consultas.validacao;
+package med.voli.api.domain.consultas.validacao.agendamento;
 
-import med.voli.api.domain.consultas.dto.*;
+import med.voli.api.domain.consultas.dto.agendamento.*;
 import med.voli.api.domain.consultas.exception.*;
+import org.springframework.stereotype.*;
 
 import java.time.*;
-
-public class ValidadorHorarioFuncionamentoClinica {
+@Component
+public class ValidadorHorarioFuncionamentoClinica implements ValidadorAgendamentoDeConsulta {
     public void validar(DadosAgendamentoConsultaDTO dados){
         var dataConsulta = dados.data();
         
